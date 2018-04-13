@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+    *{
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Application Status</h1>
+      <hr>
+    </header>
+
+    <div class="row">
+      <div class="column" style="background-color:#01DB16;">
+        <h2>Available</h2>
+        <ul>
+          {% for app in col_av %}
+            <li>{{app.app_name}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="column" style="background-color:#FE0101;">
+        <h2>Unavailable</h2>
+        <ul>
+          {% for app in col_un %}
+            <li>{{app.app_name}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
